@@ -2709,3 +2709,160 @@ section,
 
 
 /***********************************************************/
+
+.collage-sctw {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  margin: 0 !important;
+}
+
+.four-column {
+  order: 1;
+  width: 25%;
+  padding: 0;
+  margin: 0
+}
+
+a.maingallery:link,
+a.maingallery:visited,
+a.maingallery:active {
+  text-decoration: none
+}
+
+.gallery-collager-full {
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border: 5px solid #fff;
+  width: 100%;
+  height: 760px;
+  padding: 0;
+  margin: 0
+}
+
+.gallery-collager-half {
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border: 5px solid #fff;
+  width: 100%;
+  height: 380px;
+  padding: 0;
+  margin: 0
+}
+
+@media screen and (max-width:400.99px) and (min-width:320px) {
+
+  .four-column {
+    width: 100%
+  }
+
+  .collage-sctw {
+    flex-flow: row wrap
+  }
+
+  .gallery-collager-full {
+    height: 350px
+  }
+
+  .gallery-collager-half {
+    height: 350px
+  }
+}
+
+@media screen and (max-width:480.99px) and (min-width:401px) {
+
+  .four-column {
+    width: 50%
+  }
+
+  .collage-sctw {
+    flex-flow: row wrap
+  }
+
+  .gallery-collager-full {
+    height: 400px
+  }
+
+  .gallery-collager-half {
+    height: 200px
+  }
+}
+
+@media screen and (max-width:601.99px) and (min-width:481px) {
+
+  .four-column {
+    width: 50%
+  }
+
+  .collage-sctw {
+    flex-flow: row wrap
+  }
+
+  .gallery-collager-full {
+    height: 500px
+  }
+
+  .gallery-collager-half {
+    height: 250px
+  }
+}
+
+@media screen and (max-width:794.99px) and (min-width:602px) {
+
+  .four-column {
+    width: 50%
+  }
+
+  .collage-sctw {
+    flex-flow: row wrap
+  }
+
+  .gallery-collager-full {
+    height: 550px
+  }
+
+  .gallery-collager-half {
+    height: 275px
+  }
+}
+
+@media screen and (max-width:979.99px) and (min-width:795px) {
+
+
+  .collage-sctw {
+    flex-flow: row wrap
+  }
+
+}
+
+@media screen and (max-width:1059.99px) and (min-width:980px) {
+
+  .four-column {
+    width: 50%
+  }
+
+  .collage-sctw {
+    flex-flow: row wrap
+  }
+
+}
+
+@media screen and (max-width:1249.99px) and (min-width:1060px) {
+
+  .four-column {
+    width: 50%
+  }
+
+  .collage-sctw {
+    flex-flow: row wrap
+  }
+
+}
