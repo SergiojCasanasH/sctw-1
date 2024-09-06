@@ -168,8 +168,8 @@
     <section class="section" style="margin-top: -200px;">
 
       <div class="container-fluid">
-          <h3 style="z-index: 1000;">Our product range</h3>
-      
+        <h3 style="z-index: 1000;">Our product range</h3>
+
         <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="card h-100" style="border:none;">
@@ -1226,46 +1226,83 @@
 
 
   <script>
-
     $(document).ready(function () {
-      // Configuración inicial para el carrusel
-      var backgroundImages = [
+    var backgroundImages = [
         "assets/img/fund/1.webp",
         "assets/img/fund/3.webp"
-      ];
-      var currentImageIndex = 0;
-      var imageChangeInterval = 6000; // Duración en milisegundos
-      var fadeDuration = 750; // Tiempo en milisegundos para el desvanecimiento
+    ];
+    var currentImageIndex = 0;
+    var imageChangeInterval = 6000; // Intervalo en milisegundos
+    var transitionDuration = 750; // Duración de la transición en milisegundos
 
-      function changeBackgroundImage() {
-        $("#parallax").fadeOut(fadeDuration, function () {
-          $("#parallax").css("background-image", "url('" + backgroundImages[currentImageIndex] + "')");
-          $("#parallax").fadeIn(fadeDuration);
-          currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+    function changeBackgroundImage() {
+        var newImageUrl = backgroundImages[currentImageIndex];
+        // Aplicar transición CSS para suavizar el cambio de imagen
+        $("#parallax").css({
+            "transition": "background-image " + (transitionDuration / 1000) + "s ease-in-out",
+            "background-image": "url('" + newImageUrl + "')"
         });
-      }
 
-      // Inicializar la imagen de fondo
-      $("#parallax").css({
-        "background-image": "url('" + backgroundImages[0] + "')",
-        "background-size": "cover",
-        "background-attachment": "scroll",
-        "background-position": "center",
-        "background-repeat": "no-repeat", // Asegura que la imagen no se repita
-        "height": "80vh", // Asegúrate de que el contenedor tenga altura suficiente
-        "width": "100%",
-        "position": "relative"
-      });
+        // Detectar el brillo de la nueva imagen
+        detectImageBrightness(newImageUrl);
 
-      // Cambiar la imagen de fondo en intervalos
-      setInterval(changeBackgroundImage, imageChangeInterval);
+        // Actualizar el índice para la siguiente imagen
+        currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+    }
 
-      // Ajustar la posición de la imagen al hacer scroll (efecto parallax)
-      $(window).scroll(function () {
+    function detectImageBrightness(imageUrl) {
+        const image = new Image();
+        image.src = imageUrl;
+
+        image.onload = function () {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = image.width;
+            canvas.height = image.height;
+
+            ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+            let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            let totalBrightness = 0;
+
+            for (let i = 0; i < imgData.data.length; i += 4) {
+                let r = imgData.data[i];
+                let g = imgData.data[i + 1];
+                let b = imgData.data[i + 2];
+
+                let brightness = (r * 0.299 + g * 0.587 + b * 0.114);
+                totalBrightness += brightness;
+            }
+
+            let averageBrightness = totalBrightness / (imgData.data.length / 4);
+
+            if (averageBrightness > 128) {
+                $('.section-transparent').addClass('section-dark');
+            } else {
+                $('.section-transparent').removeClass('section-dark');
+            }
+        };
+    }
+
+    // Inicializar la imagen de fondo
+    $("#parallax").css({
+        "background-image": "url('" + backgroundImages[0] + "')"
+    });
+
+    // Detectar el brillo de la primera imagen
+    detectImageBrightness(backgroundImages[0]);
+
+    // Cambiar la imagen de fondo en intervalos
+    setInterval(changeBackgroundImage, imageChangeInterval);
+
+    // Ajustar la posición de la imagen al hacer scroll (efecto parallax)
+    $(window).scroll(function () {
         var scrollTop = $(window).scrollTop();
         $("#parallax").css("background-position", "center " + (scrollTop * 0.5) + "px");
-      });
     });
+});
+
 
 
 

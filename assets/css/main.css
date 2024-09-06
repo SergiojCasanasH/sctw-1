@@ -633,11 +633,29 @@ section,
   scroll-margin-top: 77px;
   overflow: clip;
 }
-.section-color{
+
+.section-color {
   background-color: #2a2c39;
 }
-.section-transparent{
+
+.parallax {
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  width: 100%;
+  position: relative;
+}
+
+.section-transparent {
   background: linear-gradient(90deg, rgba(42, 44, 57, 0.9) 0%, rgba(42, 44, 57, 0.4) 100%);
+  transition: background 0.5s ease;
+}
+
+.section-dark {
+  background: linear-gradient(90deg, rgba(42, 44, 57, 0.9) 0%, rgba(42, 44, 57, 0.5) 100%);
+
 }
 
 /*--------------------------------------------------------------
@@ -2691,4 +2709,3 @@ section,
 
 
 /***********************************************************/
-
