@@ -498,85 +498,39 @@
         <p>Find Inspiration Here</p>
       </div><!-- End Section Title -->
 
-      <div class="flex justify-center">
-        <button id="uno-btn">uno</button>
-        <button id="dos-btn">dos</button>
-      </div>
-      
       <div class="collage-sctw">
-        <!-- uno -->
-        <div class="uno overflow-hidden four-column first">
+        <div class="four-column first">
           <a class="maingallery" href="assets/img/collage/1.jpg" title="Imagen de Collage">
             <div class="gallery-collager-full" style="background-image: url('assets/img/collage/1.jpg');"></div>
           </a>
         </div>
-      
-        <!-- dos -->
-        <div class="dos overflow-hidden four-column first">
-          <a class="maingallery" href="assets/img/outOfIdeas/GlassRoof/1.jpeg" title="Imagen de Collage">
-            <div class="gallery-collager-full" style="background-image: url('assets/img/outOfIdeas/GlassRoof/1.jpeg');"></div>
-          </a>
-        </div>
-      
-        <!-- uno -->
-        <div class="uno overflow-hidden four-column second">
+
+        <div class="four-column second">
           <a class="maingallery" href="assets/img/collage/2.jpg" title="Imagen de Collage">
             <div class="gallery-collager-half" style="background-image: url('assets/img/collage/2.jpg');"></div>
           </a>
-      
+
           <a class="maingallery" href="assets/img/collage/3.jpg" title="Imagen de Collage">
             <div class="gallery-collager-half" style="background-image: url('assets/img/collage/3.jpg');"></div>
           </a>
         </div>
-      
-        <!-- dos -->
-        <div class="dos overflow-hidden four-column second">
-          <a class="maingallery" href="assets/img/outOfIdeas/GlassRoof/2.jpeg" title="Imagen de Collage">
-            <div class="gallery-collager-half" style="background-image: url('assets/img/outOfIdeas/GlassRoof/2.jpeg');"></div>
-          </a>
-      
-          <a class="maingallery" href="assets/img/outOfIdeas/GlassRoof/3.jpeg" title="Imagen de Collage">
-            <div class="gallery-collager-half" style="background-image: url('assets/img/outOfIdeas/GlassRoof/3.jpeg');"></div>
-          </a>
-        </div>
-      
-        <!-- uno -->
-        <div class="uno overflow-hidden four-column third">
+
+        <div class="four-column third">
           <a class="maingallery" href="assets/img/collage/4.jpg" title="Imagen de Collage">
             <div class="gallery-collager-full" style="background-image: url('assets/img/collage/4.jpg');"></div>
           </a>
         </div>
-      
-        <!-- dos -->
-        <div class="dos overflow-hidden four-column third">
-          <a class="maingallery" href="assets/img/outOfIdeas/GlassRoof/4.jpeg" title="Imagen de Collage">
-            <div class="gallery-collager-full" style="background-image: url('assets/img/outOfIdeas/GlassRoof/4.jpeg');"></div>
-          </a>
-        </div>
-      
-        <!-- uno -->
-        <div class="uno overflow-hidden four-column fourth">
+
+        <div class="four-column fourth">
           <a class="maingallery" href="assets/img/collage/5.jpg" title="Imagen de Collage">
             <div class="gallery-collager-half" style="background-image: url('assets/img/collage/5.jpg');"></div>
           </a>
-      
+
           <a class="maingallery" href="assets/img/collage/6.jpg" title="Imagen de Collage">
             <div class="gallery-collager-half" style="background-image: url('assets/img/collage/6.jpg');"></div>
           </a>
         </div>
-      
-        <!-- dos -->
-        <div class="dos overflow-hidden four-column fourth">
-          <a class="maingallery" href="assets/img/outOfIdeas/GlassRoof/5.jpeg" title="Imagen de Collage">
-            <div class="gallery-collager-half" style="background-image: url('assets/img/outOfIdeas/GlassRoof/5.jpeg');"></div>
-          </a>
-      
-          <a class="maingallery" href="assets/img/outOfIdeas/GlassRoof/6.jpeg" title="Imagen de Collage">
-            <div class="gallery-collager-half" style="background-image: url('assets/img/outOfIdeas/GlassRoof/6.jpeg');"></div>
-          </a>
-        </div>
       </div>
-      
     </section>
     <!-- /Features Section -->
 
@@ -1146,38 +1100,6 @@
 
 
   <script>
-    // Obtener los botones
-    const unoBtn = document.getElementById('uno-btn');
-    const dosBtn = document.getElementById('dos-btn');
-
-    // Obtener los divs por clase
-    const unoDivs = document.querySelectorAll('.uno');
-    const dosDivs = document.querySelectorAll('.dos');
-
-    // Función para mostrar solo los divs de "uno" o "dos"
-    function showOnly(selectedClass) {
-      // Ocultar todos los divs
-      unoDivs.forEach(div => div.classList.add('hidden'));
-      dosDivs.forEach(div => div.classList.add('hidden'));
-
-      // Mostrar los divs seleccionados
-      selectedClass.forEach(div => div.classList.remove('hidden'));
-    }
-
-    // Mostrar "uno" al cargar la página
-    window.onload = function () {
-      showOnly(unoDivs); // Mostrar los divs "uno"
-    };
-
-    // Asignar eventos a los botones
-    unoBtn.addEventListener('click', function () {
-      showOnly(unoDivs);
-    });
-
-    dosBtn.addEventListener('click', function () {
-      showOnly(dosDivs);
-    });
-
 
 
 
